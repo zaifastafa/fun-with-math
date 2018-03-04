@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Fun with Math!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 30px;
+            background-color: beige;
+        }
+
+        .green {
+            color: green;
+        }
+
+        .blue {
+            color: dodgerblue;
+        }
+
+        .red {
+            color: red;
+        }
+
+        #result {
+            font-weight: bold;
+        }
+
+        #container {
+            border: 3px solid seagreen;
+            width: 900px;
+            color: black;
+            font-weight: bold;
+            background-color: springgreen;
+            margin: 0 auto;
+            margin-top: 80px;
+            padding: 30px;
+        }
+
+        #equation span {
+            color: gold;
+            text-shadow: black 2px 2px;
+        }
+
+        button {
+            margin-top: 2px;
+            height: 60px;
+            width: 100px;
+            background: brown;
+            color: white;
+            border: none;
+            vertical-align: top;
+        }
+
+        input {
+            width: 50%;
+            height: 60px;
+            font-size: 25px;
+            padding: 5px;
+        }
+
+        p.right {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body onload="start();">
+
+    <div id="container">
+        <p>Fun with math!</p>
+        <p class="right">Score:
+            <span id="score">0</span>
+        </p>
+        <h1 id="equation">
+            <span id="number1"></span>
+            &nbsp;
+            <span id="operator"></span>
+            &nbsp;
+            <span id="number2"></span>
+        </h1>
+
+        <p>Please enter your answer in the box below: </p>
+        <input type="text" placeholder="Type here ..." id="answer" />
+        <button type="button" id="checkAnswer" onclick="checkAnswer();">Check</button>
+        <button type="button" onclick="start();">Next</button>
+        <button type="button" id="reset" onclick="reset();">Try Again</button>
+    </div>
+    <p id="result"></p>
+    <p>
+        <small>Developed by Huzaifa Mustafa</small>
+    </p>
+
+    <script src="math.js"></script>
+</body>
+
+</html>
