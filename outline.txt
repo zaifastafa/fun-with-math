@@ -1,0 +1,39 @@
+======= TOPICS ========
+
+- alert / prompt / confirm
+- variables
+	- declaration / initialization
+	- case sensitive
+- reserved keywords
+- operators
+	- arithmetic
+	- assignment
+- concatenation
+
+- functions
+	- declaration
+	- calling
+	- parameters
+	- return value
+
+- conditions 
+	- if..elseif..else
+	- conditional operators
+	- logical operators
+
+- arrays
+	- indexes
+	- retrieve 
+	- assign
+	- multi-dimentional
+	- associative
+- loops
+	- while
+	- do..while
+	- for
+- loop with array
+- events
+	- selecting existing HTML elements
+	- dynamically creating HTML elements
+	- changing css styles / attributes
+	- event listeners
