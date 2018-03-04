@@ -21,27 +21,31 @@ function start() {
 function reset() {
   document.getElementById("answer").focus();
   document.getElementById("answer").value = "";
-  document.getElementById("result").innerHTML = "";
+  // document.getElementById("result").innerHTML = "";
   return true;
 }
 
 // check answer
 function checkAnswer() {
   var answer = document.getElementById("answer").value;
+  document.getElementById("reset").style.visibility = "hidden";
+
   if (answer != "") {
     var message = "";
     var equation = eval(number1 + operator + number2);
-    if (isNaN(answer)) {
-      message =
-        "<span class='blue'>Hey! " + answer + " is not a valid number!</span>";
+    if (equation == answer) {
+      score += 10;
+      message = "<span class='green'>" + answer + " is correct!</span>";
     } else {
-      if (equation == answer) {
-        score += 10;
-        message = "<span class='green'>" + answer + " is correct!</span>";
+      document.getElementById("reset").style.visibility = "visible";
+      if (isNaN(answer)) {
+        message =
+          "<span class='maroon'>Hey! " +
+          answer +
+          " is not a valid number!</span>";
       } else {
         score -= 10;
         message = "<span class='red'>" + answer + " is incorrect!</span>";
-        document.getElementById("reset").style.visibility = "visible";
       }
     }
     // display answer
