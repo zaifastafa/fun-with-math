@@ -1,7 +1,7 @@
 // global variables
-var operators = ["+", "-", "*", "/"];
-var number1, number2, operator;
-var score = 0;
+const operators = ["+", "-", "*", "/"];
+let number1, number2, operator;
+let score = 0;
 
 // start function
 function start() {
@@ -27,15 +27,16 @@ function reset() {
 
 // check answer
 function checkAnswer() {
-  var answer = document.getElementById("answer").value;
+  const answer = document.getElementById("answer").value;
   document.getElementById("reset").style.visibility = "hidden";
 
-  if (answer != "") {
-    var message = "";
-    var equation = eval(number1 + operator + number2);
+  if (answer !== "") {
+    let message = "";
+    const equation = eval(number1 + operator + number2);
     if (equation == answer) {
       score += 10;
       message = "<span class='green'>" + answer + " is correct!</span>";
+      start();
     } else {
       document.getElementById("reset").style.visibility = "visible";
       if (isNaN(answer)) {
@@ -47,6 +48,8 @@ function checkAnswer() {
         score -= 10;
         message = "<span class='red'>" + answer + " is incorrect!</span>";
       }
+
+      reset();
     }
     // display answer
     document.getElementById("result").innerHTML = message;
@@ -58,7 +61,7 @@ function checkAnswer() {
 // check for answer when enter is pressed
 document.getElementById("answer").addEventListener("keyup", function(e) {
   // 13 is for enter key
-  if (e.which == 13 || e.keyCode == 13) {
+  if (e.which === 13 || e.keyCode === 13) {
     checkAnswer();
   }
   return false;
